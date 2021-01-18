@@ -7,10 +7,6 @@
     overflow: hidden;
     max-width: 500px;
     margin-right: 25px;
-    font-size: 2.62rem;
-    font-style: normal;
-    font-weight: 500;
-    color: #ffffff;
 }
 
 @media screen and (max-width: 444px) {

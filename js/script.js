@@ -12,7 +12,7 @@ function closePopup() {
 }
 
 function openPopup() {
-    let profileTitle = document.querySelector(".profile__title");
+    let profileTitle = document.querySelector(".profile__title-text");
     let profileSubtitle = document.querySelector(".profile__subtitle");
     console.log(profileTitle.textContent);
     popupContainerInputTitle.value = profileTitle.textContent;
@@ -22,7 +22,7 @@ function openPopup() {
 
 function saveprofile(evt) {
     evt.preventDefault();
-    let profileTitle = document.querySelector(".profile__title");
+    let profileTitle = document.querySelector(".profile__title-text");
     let profileSubtitle = document.querySelector(".profile__subtitle");
     profileTitle.textContent = popupContainerInputTitle.value;
     profileSubtitle.textContent = popupContainerInputSubtitle.value;
