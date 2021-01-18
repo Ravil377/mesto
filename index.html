@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./pages/index.css" />
+        <title>Mesto Russia</title>
+    </head>
+    <body class="root">
+        <section class="popup">
+            <section class="popup__container">
+                <button class="popup__button-close"></button>
+                <p class="popup__container-title">Редактировать профиль</p>
+
+                <input type="text" placeholder="Имя" class="popup__container-input-title" />
+                <input type="text" placeholder="О себе" class="popup__container-input-subtitle" />
+                <button class="popup__container-submit-button">Сохранить</button>
+            </section>
+        </section>
+        <section class="page">
+            <header class="header">
+                <img src="./images/logo.svg" alt="Лого" class="header__logo" />
+            </header>
+            <section class="main">
+                <section class="profile">
+                    <img src="./images/jak-iv-kusto.jpg" alt="Жак-Ив Кусто" class="profile__avatar" />
+                    <ul class="profile__info">
+                        <li class="profile__title"><h1>Жак-Ив Кусто</h1></li>
+                        <li class="profile__subtitle">Исследователь океана</li>
+                        <li class="profile__edit"><button class="profile__edit-button"></button></li>
+                    </ul>
+                    <button class="profile__add-button"></button>
+                </section>
+                <section class="gallery">
+                    <ul class="elements">
+                        <li class="element">
+                            <img src="./images/karachaevsk.jpg" class="element__image" alt="Карачаевск" />
+                            <ul class="element__down-sector">
+                                <li class="element__title">Карачаевск</li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="element__like-disabled" />
+                                        <span class="element__like element__like-checkbox"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="element">
+                            <img src="./images/elbrus.png" class="element__image" alt="Гора Эльбрус" />
+                            <ul class="element__down-sector">
+                                <li class="element__title">Гора Эльбрус</li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="element__like-disabled" />
+                                        <span class="element__like element__like-checkbox"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="element">
+                            <img src="./images/dombay.png" class="element__image" alt="Домбай" />
+                            <ul class="element__down-sector">
+                                <li class="element__title">Домбай</li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="element__like-disabled" />
+                                        <span class="element__like element__like-checkbox"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="element">
+                            <img src="./images/elbrus.png" class="element__image" alt="Гора Эльбрус" />
+                            <ul class="element__down-sector">
+                                <li class="element__title">Гора Эльбрус</li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="element__like-disabled" />
+                                        <span class="element__like element__like-checkbox"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="element">
+                            <img src="./images/dombay.png" class="element__image" alt="Домбай" />
+                            <ul class="element__down-sector">
+                                <li class="element__title">Домбай</li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="element__like-disabled" />
+                                        <span class="element__like element__like-checkbox"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="element">
+                            <img src="./images/karachaevsk.jpg" class="element__image" alt="Карачаевск" />
+                            <ul class="element__down-sector">
+                                <li class="element__title">Карачаевск</li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="element__like-disabled" />
+                                        <span class="element__like element__like-checkbox"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <footer class="footer">
+                <p class="footer__text">&copy; 2020 Mesto Russia</p>
+            </footer>
+        </section>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
