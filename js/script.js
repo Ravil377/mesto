@@ -6,7 +6,14 @@ let profileSubtitle = document.querySelector(".profile__subtitle");
 let popupButtonClose = popup.querySelector(".popup__button-close");
 let popupButtonOpen = document.querySelector(".profile__edit-button");
 let editProfile = document.querySelector(".edit_profile");
+let elements = document.querySelector(".elements")
+let elementLikeButton = elements.querySelectorAll(".element__like-button");
 
+for (let i=0; i < elementLikeButton.length; i++) {
+    elementLikeButton[i].addEventListener("click", function() {
+        elementLikeButton[i].classList.toggle("element__like-button_active");
+    });
+}
 
 
 
