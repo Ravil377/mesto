@@ -28,10 +28,7 @@
 @import url('../blocks/element/__down-sector/element__down-sector.css');
 @import url('../blocks/element/__like-button/element__like-button.css');
 @import url('../blocks/element/__title/element__title.css');
-<<<<<<< HEAD
 @import url(../blocks/element/__like-button/_active/element__like-button_active.css);
-=======
->>>>>>> e5ce4ebf966f7b8516ef763c5e858f9dfd6df477
 
 @import url('../blocks/elements/elements.css');
 
@@ -45,8 +42,4 @@
 @import url('../blocks/popup/__form/popup__form.css');
 
 @import url('../blocks/footer/footer.css');
-<<<<<<< HEAD
 @import url('../blocks/footer/__text/footer__text.css');
-=======
-@import url('../blocks/footer/__text/footer__text.css');
->>>>>>> e5ce4ebf966f7b8516ef763c5e858f9dfd6df477
