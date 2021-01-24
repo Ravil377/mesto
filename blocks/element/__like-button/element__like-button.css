@@ -1,0 +1,21 @@
+.element__like-button {
+    margin-top: 3px;
+    min-width: 22px;
+    min-height: 19px;
+    background-image: url(../../../images/like.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+}
+
+.element__like-button:hover {
+    cursor: pointer;
+    opacity: 0.5
+}
+
+.element__like-button:active, .element__like-button:focus {
+    background-image: url(../../../images/like-black.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    outline: none;
+}
