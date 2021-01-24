@@ -8,9 +8,3 @@
     max-width: 500px;
     margin-right: 25px;
 }
-
-@media screen and (max-width: 444px) {
-    .profile__title {
-        font-size: 1.68rem;
-    }
-}

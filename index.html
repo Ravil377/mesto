@@ -7,112 +7,83 @@
         <title>Mesto Russia</title>
     </head>
     <body class="root">
-        <section class="popup">
-            <section class="popup__container">
-                <button class="popup__button-close"></button>
-                <p class="popup__container-title">Редактировать профиль</p>
-
-                <input type="text" placeholder="Имя" class="popup__container-input-title" />
-                <input type="text" placeholder="О себе" class="popup__container-input-subtitle" />
-                <button class="popup__container-submit-button">Сохранить</button>
-            </section>
-        </section>
-        <section class="page">
+        <div class="popup">
+            <div class="popup__container">
+                <button type="button" class="popup__button-close"></button>
+                <h3 class="popup__container-title">Редактировать профиль</h3>
+                <form name="edit_profile" class="edit_profile">
+                    <input type="text" name="fio" placeholder="Имя" class="popup__input popup__input_type_name" />
+                    <input type="text" name="info" placeholder="О себе" class="popup__input popup__input_type_info" />
+                    <button type="submit" class="popup__container-submit-button">Сохранить</button>
+                </form>
+            </div>
+        </div>
+        <div class="page">
             <header class="header">
                 <img src="./images/logo.svg" alt="Лого" class="header__logo" />
             </header>
-            <section class="main">
+            <main class="main">
                 <section class="profile">
                     <img src="./images/jak-iv-kusto.jpg" alt="Жак-Ив Кусто" class="profile__avatar" />
-                    <ul class="profile__info">
-                        <li class="profile__title"><h1 class="profile__title-text">Жак-Ив Кусто</h1></li>
-                        <li class="profile__subtitle">Исследователь океана</li>
-                        <li class="profile__edit"><button class="profile__edit-button"></button></li>
-                    </ul>
-                    <button class="profile__add-button"></button>
+                    <div class="profile__info">
+                        <h1 class="profile__title profile__title-text">Жак-Ив Кусто</h1>
+                        <p class="profile__subtitle">Исследователь океана</p>
+                        <button type="button" class="profile__edit profile__edit-button"></button>
+                    </div>
+                    <button type="button" class="profile__add-button"></button>
                 </section>
                 <section class="gallery">
                     <ul class="elements">
                         <li class="element">
                             <img src="./images/karachaevsk.jpg" class="element__image" alt="Карачаевск" />
-                            <ul class="element__down-sector">
-                                <li class="element__title">Карачаевск</li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" class="element__like-disabled" />
-                                        <span class="element__like element__like-checkbox"></span>
-                                    </label>
-                                </li>
-                            </ul>
+                            <div class="element__down-sector">
+                                <h2 class="element__title">Карачаевск</h2>                                
+                                <button type="button" class="element__like-button"></button>
+                            </div>
                         </li>
                         <li class="element">
                             <img src="./images/elbrus.png" class="element__image" alt="Гора Эльбрус" />
-                            <ul class="element__down-sector">
-                                <li class="element__title">Гора Эльбрус</li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" class="element__like-disabled" />
-                                        <span class="element__like element__like-checkbox"></span>
-                                    </label>
-                                </li>
-                            </ul>
+                            <div class="element__down-sector">
+                                <h2 class="element__title">Гора Эльбрус</h2>
+                                <button type="button" class="element__like-button"></button>
+                            </div>
                         </li>
                         <li class="element">
                             <img src="./images/dombay.png" class="element__image" alt="Домбай" />
-                            <ul class="element__down-sector">
-                                <li class="element__title">Домбай</li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" class="element__like-disabled" />
-                                        <span class="element__like element__like-checkbox"></span>
-                                    </label>
-                                </li>
-                            </ul>
+                            <div class="element__down-sector">
+                                <h2 class="element__title">Домбай</h2>
+                                <button type="button" class="element__like-button"></button>
+                            </div>
                         </li>
                         <li class="element">
                             <img src="./images/elbrus.png" class="element__image" alt="Гора Эльбрус" />
-                            <ul class="element__down-sector">
-                                <li class="element__title">Гора Эльбрус</li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" class="element__like-disabled" />
-                                        <span class="element__like element__like-checkbox"></span>
-                                    </label>
-                                </li>
-                            </ul>
+                            <div class="element__down-sector">
+                                <h2 class="element__title">Гора Эльбрус</h2>
+                                <button type="button" class="element__like-button"></button>
+                            </div>
                         </li>
                         <li class="element">
                             <img src="./images/dombay.png" class="element__image" alt="Домбай" />
-                            <ul class="element__down-sector">
-                                <li class="element__title">Домбай</li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" class="element__like-disabled" />
-                                        <span class="element__like element__like-checkbox"></span>
-                                    </label>
-                                </li>
-                            </ul>
+                            <div class="element__down-sector">
+                                <h2 class="element__title">Домбай</h2>
+                                <button type="button" class="element__like-button"></button>
+                            </div>        
                         </li>
                         <li class="element">
                             <img src="./images/karachaevsk.jpg" class="element__image" alt="Карачаевск" />
-                            <ul class="element__down-sector">
-                                <li class="element__title">Карачаевск</li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" class="element__like-disabled" />
-                                        <span class="element__like element__like-checkbox"></span>
-                                    </label>
-                                </li>
-                            </ul>
+                            <div class="element__down-sector">
+                                <h2 class="element__title">Карачаевск</h2>
+                                <button type="button" class="element__like-button"></button>
+                                </div>
                         </li>
                     </ul>
                 </section>
-            </section>
+            </main>
 
             <footer class="footer">
                 <p class="footer__text">&copy; 2020 Mesto Russia</p>
             </footer>
-        </section>
+        </div>
         <script src="./js/script.js"></script>
     </body>
 </html>
