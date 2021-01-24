@@ -5,7 +5,7 @@ let profileTitle = document.querySelector(".profile__title-text");
 let profileSubtitle = document.querySelector(".profile__subtitle");
 let popupButtonClose = popup.querySelector(".popup__button-close");
 let popupButtonOpen = document.querySelector(".profile__edit-button");
-let editProfile = document.querySelector(".popup__edit-profile");
+let popupEditProfile = document.querySelector(".popup__edit-profile");
 let elements = document.querySelector(".elements")
 let elementLikeButton = elements.querySelectorAll(".element__like-button");
 
@@ -35,4 +35,4 @@ function saveprofile(evt) {
 
 popupButtonClose.addEventListener("click", closePopup);
 popupButtonOpen.addEventListener("click", openPopup);
-editProfile.addEventListener("submit", saveprofile);
+popupEditProfile.addEventListener("submit", saveprofile);
