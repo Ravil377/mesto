@@ -16,8 +16,6 @@ for (let i=0; i < elementLikeButton.length; i++) {
 }
 
 
-
-
 function closePopup() {
     popup.classList.remove("popup_opened");
 }
@@ -34,7 +32,6 @@ function saveprofile(evt) {
     profileSubtitle.textContent = popupInputTypeInfo.value;
     closePopup();
 }
-
 
 popupButtonClose.addEventListener("click", closePopup);
 popupButtonOpen.addEventListener("click", openPopup);
