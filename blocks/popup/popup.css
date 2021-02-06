@@ -1,5 +1,6 @@
 .popup {
-    display: none;
+    height: 0;
+    opacity: 0;
     z-index: 2;
     position: fixed;
     top: 0;
@@ -8,4 +9,10 @@
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .5s;
+    /* transition-property: opacity, height;
+    transition-delay: 0s, 0s;
+    transition-duration: 1s, 0s; */
 }
