@@ -46,6 +46,7 @@ let profileSubtitle = profileInfo.querySelector(".profile__subtitle");
 let popupAddButton = document.querySelector(".profile__add-button");
 /*   Кнопка редактирования профиля    */
 let popupButtonOpen = document.querySelector(".profile__edit-button");
+
 /*  Кнопка закрытия попапа   */
 let popupButtonClose = popup.querySelector(".popup__button-close");
 
@@ -83,6 +84,9 @@ function getCard(card) {
 
   const openImage = galleryElement.querySelector(".element__image");
   openImage.addEventListener("click", openimage);
+
+let popupSubmitButton = document.querySelector(".popup__edit-profile");
+
 
   return galleryElement;
 }
@@ -141,6 +145,7 @@ function saveCard(evt) {
   closePopup();
 }
 
+
 /*    Удаляем карточку   */
 function cardRemove(evt) {
   const targetEl = evt.target;
@@ -182,3 +187,8 @@ popupSubmitButton.addEventListener("submit", saveprofile);
 addButton.addEventListener("click", closePopup);
 popupAddButton.addEventListener("click", openPopupAddCard);
 popupAddCard.addEventListener("submit", saveCard);
+
+popupButtonClose.addEventListener("click", closePopup);
+popupButtonOpen.addEventListener("click", openPopup);
+popupSubmitButton.addEventListener("submit", saveprofile);
+

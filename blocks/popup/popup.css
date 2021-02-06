@@ -12,7 +12,4 @@
     justify-content: center;
     align-items: center;
     transition: opacity .5s;
-    /* transition-property: opacity, height;
-    transition-delay: 0s, 0s;
-    transition-duration: 1s, 0s; */
 }
