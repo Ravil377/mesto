@@ -46,6 +46,7 @@ let profileSubtitle = profileInfo.querySelector(".profile__subtitle");
 let popupAddButton = document.querySelector(".profile__add-button");
 /*   Кнопка редактирования профиля    */
 let popupButtonOpen = document.querySelector(".profile__edit-button");
+<<<<<<< Updated upstream
 
 /*  Кнопка закрытия попапа   */
 let popupButtonClose = popup.querySelector(".popup__button-close");
@@ -53,11 +54,20 @@ let popupButtonClose = popup.querySelector(".popup__button-close");
 /*  Попап добавления карточки   */
 const popupContainerAddCard = document.querySelector(".popup__container_add-card");
 
+=======
+/*  Кнопка закрытия попапа   */
+let popupButtonClose = popup.querySelector(".popup__button-close");
+
+/*  Попап добавления карточки   */
+const popupContainerAddCard = document.querySelector(".popup__container_add-card");
+
+>>>>>>> Stashed changes
 /*  Переменные формы добавления карточки   */
 const addButton = popup.querySelector("#add-button");
 const popupInputNameCard = popup.querySelector(".popup__input_name_card");
 const popupInputFotoCard = popup.querySelector(".popup__input_foto_card");
 const popupAddCard = document.querySelector(".popup__add-card");
+<<<<<<< Updated upstream
 
 /*  Шаблон   */
 const galleryTemplate = document.querySelector(".element-template");
@@ -86,7 +96,34 @@ function getCard(card) {
   openImage.addEventListener("click", openimage);
 
 let popupSubmitButton = document.querySelector(".popup__edit-profile");
+=======
 
+/*  Шаблон   */
+const galleryTemplate = document.querySelector(".element-template");
+const galleryImageTemplate = document.querySelector(".template-gallery");
+
+/*      Первоначальная загрузка карточек        */
+function loadCards() {
+  const massiv = initialCards.map(getCard);
+  elements.append(...massiv);
+}
+
+/*      Работа с шаблоном карточки        */
+function getCard(card) {
+  const galleryElement = galleryTemplate.content.cloneNode(true);
+  galleryElement.querySelector(".element__image").src = card.link;
+  galleryElement.querySelector(".element__image").alt = card.name;
+  galleryElement.querySelector(".element__title").textContent = card.name;
+
+  const removebutton = galleryElement.querySelector(".element__delete-button");
+  removebutton.addEventListener("click", cardRemove);
+
+  const likebutton = galleryElement.querySelector(".element__like-button");
+  likebutton.addEventListener("click", likecard);
+>>>>>>> Stashed changes
+
+  const openImage = galleryElement.querySelector(".element__image");
+  openImage.addEventListener("click", openimage);
 
   return galleryElement;
 }
@@ -121,6 +158,7 @@ function saveprofile(evt) {
 function openPopupAddCard() {
   popup.classList.add("popup_opened");
   popupContainerAddCard.classList.add("popup__container_opened");
+<<<<<<< Updated upstream
 }
 
 /*    Добавляем карточку       */
@@ -146,6 +184,32 @@ function saveCard(evt) {
 }
 
 
+=======
+}
+
+/*    Добавляем карточку       */
+function saveCard(evt) {
+  evt.preventDefault();
+  const galleryElement = galleryTemplate.content.cloneNode(true);
+  galleryElement.querySelector(".element__image").src = popupInputFotoCard.value;
+  galleryElement.querySelector(".element__title").textContent = popupInputNameCard.value;
+  popupInputFotoCard.value = "";
+  popupInputNameCard.value = "";
+
+  const removebutton = galleryElement.querySelector(".element__delete-button");
+  removebutton.addEventListener("click", cardRemove);
+
+  const likebutton = galleryElement.querySelector(".element__like-button");
+  likebutton.addEventListener("click", likecard);
+
+  const openImage = galleryElement.querySelector(".element__image");
+  openImage.addEventListener("click", openimage);
+
+  elements.prepend(galleryElement);
+  closePopup();
+}
+
+>>>>>>> Stashed changes
 /*    Удаляем карточку   */
 function cardRemove(evt) {
   const targetEl = evt.target;
@@ -158,6 +222,7 @@ function likecard(evt) {
   const targetEl = evt.target;
   targetEl.classList.toggle("element__like-button_active");
 }
+<<<<<<< Updated upstream
 
 /*   Открытие картинка на весь экран   */
 function openimage(evt) {
@@ -187,8 +252,37 @@ popupSubmitButton.addEventListener("submit", saveprofile);
 addButton.addEventListener("click", closePopup);
 popupAddButton.addEventListener("click", openPopupAddCard);
 popupAddCard.addEventListener("submit", saveCard);
+=======
+>>>>>>> Stashed changes
 
-popupButtonClose.addEventListener("click", closePopup);
+/*   Открытие картинка на весь экран   */
+function openimage(evt) {
+  const targetEl = evt.target;
+  const imageElement = galleryImageTemplate.content.cloneNode(true);
+  imageElement.querySelector(".full-image__image").src = targetEl.src;
+  imageElement.querySelector(".full-image__image").alt = targetEl.alt;
+  imageElement.querySelector(".full-image__caption").textContent = targetEl.alt;
+  imageElement.querySelector(".popup__button-close").addEventListener("click", function (evt) {
+      const targetEl = evt.target;
+      const targetItem = targetEl.closest(".full-image");
+      targetItem.remove();
+      closePopup();
+  });
+  popup.classList.add("popup_opened");
+  popup.classList.add("popup_full-image");
+  popup.append(imageElement);
+}
+
+/*   Вызов функции первоначальной загрузки карточек   */
+loadCards();
+
+editButton.addEventListener("click", closePopup);
 popupButtonOpen.addEventListener("click", openPopup);
 popupSubmitButton.addEventListener("submit", saveprofile);
 
+<<<<<<< Updated upstream
+=======
+addButton.addEventListener("click", closePopup);
+popupAddButton.addEventListener("click", openPopupAddCard);
+popupAddCard.addEventListener("submit", saveCard);
+>>>>>>> Stashed changes
