@@ -3,19 +3,18 @@
     min-width: 22px;
     min-height: 19px;
     background-image: url(../../../images/like.png);
+    background-color: white;
     background-position: center;
     background-repeat: no-repeat;
     border: 0;
+    transition: opacity .5s;
 }
 
 .element__like-button:hover {
     cursor: pointer;
-    opacity: 0.5
+    opacity: 0.5;
 }
 
 .element__like-button:active, .element__like-button:focus {
-    background-image: url(../../../images/like-black.png);
-    background-position: center;
-    background-repeat: no-repeat;
     outline: none;
 }
