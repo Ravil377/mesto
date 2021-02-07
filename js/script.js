@@ -154,7 +154,7 @@ function likecard(evt) {
   targetEl.classList.toggle("element__like-button_active");
 }
 
-/*   Открытие картинка на весь экран   */
+/*   Открытие картинки на весь экран   */
 function openimage(evt) {
   const targetEl = evt.target;
   const imageElement = galleryImageTemplate.content.cloneNode(true);
