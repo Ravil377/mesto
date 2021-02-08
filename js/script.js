@@ -4,13 +4,13 @@ const profileTitle = profileInfo.querySelector(".profile__title-text");
 const profileSubtitle = profileInfo.querySelector(".profile__subtitle");
 
 //      Popup профиля
-const popupContainerEditProfile = document.querySelector(".popup__container_edit-profile");
+const popupContainerEditProfile = document.querySelector(".popup__edit-profile");
 const profileEdit = popupContainerEditProfile.querySelector(".popup__edit-profile");
 const popupInputTypeName = popupContainerEditProfile.querySelector(".popup__input_type_name");
 const popupInputTypeInfo = popupContainerEditProfile.querySelector(".popup__input_type_info");
 
 //      Попап добавления карточки
-const popupContainerAddCard = document.querySelector(".popup__container_add-card");
+const popupContainerAddCard = document.querySelector(".popup__add-card");
 const popupAddCard = popupContainerAddCard.querySelector(".popup__add-card");
 const popupInputNameCard = popupContainerAddCard.querySelector(".popup__input_name_card");
 const popupInputFotoCard = popupContainerAddCard.querySelector(".popup__input_foto_card");
@@ -34,7 +34,7 @@ const popupButtonClose = document.querySelectorAll(".popup__button-close");
 const elements = document.querySelector(".elements");
 
 //      Popup открытой карточки
-const popupTypeGallery = document.querySelector(".popup_type_gallery");
+const popupTypeGallery = document.querySelector(".popup__gallery");
 const fullImage = document.querySelector(".full-image__image");
 const fullImageCaption = document.querySelector(".full-image__caption");
 
@@ -63,9 +63,9 @@ function closePopup() {
 }
 
 /*      Первоначальная загрузка карточек        */
-function loadCards() {
+function loadCards(container) {
     const cardsElements = initialCards.map(getCard);
-    elements.append(...cardsElements);
+    container.append(...cardsElements);
 }
 
 /*      Работа с шаблоном карточки        */
@@ -119,7 +119,7 @@ function profileSave(evt) {
 }
 
 //      Вызов функции первоначальной загрузки карточек
-loadCards();
+loadCards(elements);
 
 popupAddCard.addEventListener("submit", cardAppend); //  Сохранение карточки
 popupButtonAdd.addEventListener("click", openPopup);  //  Открытие попапа добавления карточки
