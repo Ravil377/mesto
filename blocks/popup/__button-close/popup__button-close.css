@@ -3,8 +3,8 @@
     top: -40px;
     right: -40px;
     border: 0;
-    min-width: 40px;
-    min-height: 40px;
+    width: 40px;
+    height: 40px;
     background-image: url(../../../images/close-icon.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -19,8 +19,8 @@
 
 @media screen and (max-width: 373px) {
     .popup__button-close {
-        min-width: 26px;
-        min-height: 26px;
+        width: 26px;
+        height: 26px;
         top: -30px;
         right: 0;
     }
