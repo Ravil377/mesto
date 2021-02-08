@@ -63,9 +63,9 @@ function closePopup() {
 }
 
 /*      Первоначальная загрузка карточек        */
-function loadCards() {
+function loadCards(container) {
     const cardsElements = initialCards.map(getCard);
-    elements.append(...cardsElements);
+    container.append(...cardsElements);
 }
 
 /*      Работа с шаблоном карточки        */
@@ -119,7 +119,7 @@ function profileSave(evt) {
 }
 
 //      Вызов функции первоначальной загрузки карточек
-loadCards();
+loadCards(elements);
 
 popupAddCard.addEventListener("submit", cardAppend); //  Сохранение карточки
 popupButtonAdd.addEventListener("click", openPopup);  //  Открытие попапа добавления карточки
