@@ -45,13 +45,12 @@ function openProfilePopup() {
 }
 
 function openAddCardPopup() {
-    popupInputFotoCard.value = "";
-    popupInputNameCard.value = "";
+    cardAdd.reset();
     openPopup(popupContainerAddCard);
 }
 
 function openImagePopup(e) {
-    let targetEl = e.target;
+    const targetEl = e.target;
     fullImage.src = targetEl.src;
     fullImage.alt = targetEl.alt;
     fullImageCaption.textContent = targetEl.alt;
@@ -75,8 +74,8 @@ function loadCards(container, data) {
 /*      Работа с шаблоном карточки        */
 function getCard(card) {
     const galleryElement = galleryTemplate.content.cloneNode(true);
-    let galleryEl = galleryElement.querySelector(".element__image");
-    let galleryElTitle = galleryElement.querySelector(".element__title");
+    const galleryEl = galleryElement.querySelector(".element__image");
+    const galleryElTitle = galleryElement.querySelector(".element__title");
     galleryEl.src = card.link;
     galleryEl.alt = card.name;
     galleryElTitle.textContent = card.name;
@@ -120,7 +119,7 @@ function handleProfileFormSubmit(evt) {
     evt.preventDefault();
     profileTitle.textContent = popupInputTypeName.value;
     profileSubtitle.textContent = popupInputTypeInfo.value;
-    closePopup();
+    closePopup(popupContainerEditProfile);
 }
 
 //      Вызов функции первоначальной загрузки карточек
