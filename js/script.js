@@ -98,10 +98,8 @@ function getCard(card) {
     galleryEl.src = card.link;
     galleryEl.alt = card.name;
     galleryElTitle.textContent = card.name;
-
     const removeButton = galleryElement.querySelector(".element__delete-button");
     removeButton.addEventListener("click", removeCard);
-
     const likeButton = galleryElement.querySelector(".element__like-button");
     likeButton.addEventListener("click", likeCard);
     galleryEl.addEventListener("click", () => openImagePopup(card.link, card.name));
@@ -111,10 +109,12 @@ function getCard(card) {
 //      Добавляем карточку
 function appendCard(evt) {
     evt.preventDefault();
-    elements.prepend(getCard({
-        name: popupInputNameCard.value,
-        link: popupInputFotoCard.value
-    }));
+    elements.prepend(
+        getCard({
+            name: popupInputNameCard.value,
+            link: popupInputFotoCard.value,
+        })
+    );
     closePopup(popupContainerAddCard);
 }
 
@@ -143,7 +143,7 @@ function handleProfileFormSubmit(evt) {
 loadCards(elements, initialCards);
 
 cardAdd.addEventListener("submit", appendCard); //  Сохранение карточки
-popupButtonAdd.addEventListener("click", openAddCardPopup);  //  Открытие попапа добавления карточки
+popupButtonAdd.addEventListener("click", openAddCardPopup); //  Открытие попапа добавления карточки
 popupButtonOpen.addEventListener("click", openProfilePopup); //  Открытие попапа изменения профиля
 profileEdit.addEventListener("submit", handleProfileFormSubmit); //   Сохранение данных в профиль
 
