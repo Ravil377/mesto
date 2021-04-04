@@ -76,10 +76,7 @@ function closePopupEsc(e) {
 
 function openPopup(popup) {
     popup.classList.add("popup_opened");
-<<<<<<< Updated upstream
-=======
     document.addEventListener("keydown", closePopupEsc);
->>>>>>> Stashed changes
 }
 
 function closePopup(popup) {
@@ -107,13 +104,7 @@ function getCard(card) {
 
     const likeButton = galleryElement.querySelector(".element__like-button");
     likeButton.addEventListener("click", likeCard);
-<<<<<<< Updated upstream
-
-    galleryEl.addEventListener("click", openImagePopup);
-
-=======
     galleryEl.addEventListener("click", () => openImagePopup(card.link, card.name));
->>>>>>> Stashed changes
     return galleryElement;
 }
 
@@ -157,9 +148,6 @@ popupButtonOpen.addEventListener("click", openProfilePopup); //  Открыти�
 profileEdit.addEventListener("submit", handleProfileFormSubmit); //   Сохранение данных в профиль
 
 popupCloseButtons.forEach((item) => {
-<<<<<<< Updated upstream
-    item.addEventListener("click", () => closePopup(item.closest('.popup'))); //  Закрытие попапа
-=======
     item.addEventListener("click", () => closePopup(item.closest(".popup"))); //  Закрытие попапа по крестику
 });
 
@@ -169,6 +157,5 @@ popups.forEach((item) => {
         if(e.target === item) 
             closePopup(item.closest(".popup"));
     });
->>>>>>> Stashed changes
 });
     
