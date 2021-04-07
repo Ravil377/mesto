@@ -11,9 +11,17 @@
             <div class="popup__container">
                 <button type="button" class="popup__button-close"></button>
                 <h2 class="popup__container-title">Редактировать профиль</h2>
-                <form name="edit-profile" class="edit-profile">
-                    <input type="text" name="fio" placeholder="Имя" class="popup__input popup__input_type_name" />
-                    <input type="text" name="info" placeholder="О себе" class="popup__input popup__input_type_info" />
+                <form name="edit-profile" class="form edit-profile" novalidate>
+                    <input type="text" name="fio" placeholder="Имя" id="fio-input" class="popup__input popup__input_type_name" 
+                        minlength="2" 
+                        maxlength="40" 
+                        required/>
+                    <span class="popup__input-error fio-input-error"></span>
+                    <input type="text" name="info" placeholder="О себе" id="info-input" class="popup__input popup__input_type_info" 
+                        minlength="2" 
+                        maxlength="200" 
+                        required/>
+                    <span class="popup__input-error info-input-error"></span>
                     <button type="submit" class="popup__container-submit-button popup__container-submit-button_edit-button">Сохранить</button>
                 </form>
             </div>
@@ -53,7 +61,7 @@
                     <div class="profile__info">
                         <h1 class="profile__title profile__title-text">Жак-Ив Кусто</h1>
                         <p class="profile__subtitle">Исследователь океана</p>
-                        <button type="button" class="profile__edit profile__edit-button" id="edit"></button>
+                        <button type="button" class="profile__edit profile__edit-button" id="ed2it"></button>
                     </div>
                     <button type="button" class="profile__add-button" id="addButton"></button>
                 </section>
@@ -77,6 +85,7 @@
             </li>
         </template>
         <script src="./js/initial-cards.js"></script>
+        <script src="./js/validate.js"></script>
         <script src="./js/script.js"></script>
     </body>
 </html>
