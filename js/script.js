@@ -38,9 +38,13 @@ const popupGallery = document.querySelector(".popup_gallery");
 const fullImage = document.querySelector(".full-image__image");
 const fullImageCaption = document.querySelector(".full-image__caption");
 
+//  Кнопка сохранения профиля
+const popupButtonEditProfile = document.querySelector(".popup__container-submit-button_edit-button");
+
+// Inputы popup профиля
+const inputList = Array.from(popupContainerEditProfile.querySelectorAll(".popup__input"));
+
 function openProfilePopup() {
-    const popupButtonEditProfile = document.querySelector(".popup__container-submit-button_edit-button");
-    const inputList = Array.from(popupContainerEditProfile.querySelectorAll(".popup__input"));
     popupInputTypeName.value = profileTitle.textContent;
     popupInputTypeInfo.value = profileSubtitle.textContent;
     toggleButtonState(inputList, popupButtonEditProfile);
@@ -51,10 +55,7 @@ function openProfilePopup() {
 }
 
 function openAddCardPopup() {
-    const popupButtonSaveCard = document.querySelector(".popup__container-submit-button_add-button");
     cardAdd.reset();
-    popupButtonSaveCard.setAttribute("disabled", true);
-    popupButtonSaveCard.classList.add("popup__container-submit-button_inactive");
     openPopup(popupContainerAddCard);
 }
 
@@ -68,9 +69,8 @@ function openImagePopup(link, name) {
 /*      Закрытие попапа при нажатии на Esc        */
 function closePopupEsc(e) {
     if (e.code === "Escape") {
-        popups.forEach((item) => {
-            closePopup(item.closest(".popup"));
-        });
+        const popupOpen = document.querySelector(".popup_opened");
+        closePopup(popupOpen);
     }
 }
 
