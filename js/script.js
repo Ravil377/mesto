@@ -45,8 +45,6 @@ const popupButtonEditProfile = document.querySelector(".popup__container-submit-
 const inputList = Array.from(popupContainerEditProfile.querySelectorAll(".popup__input"));
 
 function openProfilePopup() {
-    const popupButtonEditProfile = document.querySelector(".popup__container-submit-button_edit-button");
-    const inputList = Array.from(popupContainerEditProfile.querySelectorAll(".popup__input"));
     popupInputTypeName.value = profileTitle.textContent;
     popupInputTypeInfo.value = profileSubtitle.textContent;
     toggleButtonState(inputList, popupButtonEditProfile);
@@ -57,10 +55,7 @@ function openProfilePopup() {
 }
 
 function openAddCardPopup() {
-    const popupButtonSaveCard = document.querySelector(".popup__container-submit-button_add-button");
     cardAdd.reset();
-    popupButtonSaveCard.setAttribute("disabled", true);
-    popupButtonSaveCard.classList.add("popup__container-submit-button_inactive");
     openPopup(popupContainerAddCard);
 }
 
