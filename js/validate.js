@@ -48,6 +48,7 @@ function hasInvalidInput(inputList) {
 }
 
 function toggleButtonState(inputList, buttonElement) {
+    disableSubmitButton(buttonElement);
     if (hasInvalidInput(inputList)) {
         buttonElement.setAttribute("disabled", true);
         buttonElement.classList.add("popup__container-submit-button_inactive");
@@ -55,6 +56,10 @@ function toggleButtonState(inputList, buttonElement) {
         buttonElement.removeAttribute("disabled");
         buttonElement.classList.remove("popup__container-submit-button_inactive");
     }
+    function disableSubmitButton(buttonElement) {
+        buttonElement.setAttribute("disabled", true);
+        buttonElement.classList.add("popup__container-submit-button_inactive");
+    } 
 }
 
 enableValidation();

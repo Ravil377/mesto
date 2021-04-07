@@ -41,8 +41,14 @@ const fullImageCaption = document.querySelector(".full-image__caption");
 //  Кнопка сохранения профиля
 const popupButtonEditProfile = document.querySelector(".popup__container-submit-button_edit-button");
 
+
+const popupButtonAddCard = document.querySelector(".popup__container-submit-button_add-button");
+
+
 // Inputы popup профиля
 const inputList = Array.from(popupContainerEditProfile.querySelectorAll(".popup__input"));
+
+const inputListAddCard = Array.from(popupContainerAddCard.querySelectorAll(".popup__input"));
 
 function openProfilePopup() {
     popupInputTypeName.value = profileTitle.textContent;
@@ -56,6 +62,7 @@ function openProfilePopup() {
 
 function openAddCardPopup() {
     cardAdd.reset();
+    toggleButtonState(inputListAddCard, popupButtonAddCard);
     openPopup(popupContainerAddCard);
 }
 
