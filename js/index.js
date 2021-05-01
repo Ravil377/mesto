@@ -40,7 +40,19 @@ const popupGallery = document.querySelector(".popup_gallery");
 const fullImage = document.querySelector(".full-image__image");
 const fullImageCaption = document.querySelector(".full-image__caption");
 
-const forms = document.querySelectorAll(".form");
+const validation = (
+    {
+        formSelector: '.popup__form',
+        inputSelector: '.popup__input',
+        submitButtonSelector: '.popup__container-submit-button',
+        inactiveButtonClass: 'popup__container-submit-button_inactive',
+        inputErrorClass: 'popup__input_type_error',
+        errorClass: 'popup__input-error_active'
+    }
+); 
+
+const profileEditValidation = new FormValidator(validation, profileEdit);
+const cardAddValidation = new FormValidator(validation, cardAdd);
 
 //      Добавляем карточку
 function addCard() {
@@ -74,8 +86,7 @@ function openProfilePopup() {
 
 function openAddCardPopup() {
     cardAdd.reset();
-    popupButtonAddCard.setAttribute("disabled", true);
-    popupButtonAddCard.classList.add("popup__container-submit-button_inactive");
+    cardAddValidation.disableSubmitButton(popupButtonAddCard);
     openPopup(popupContainerAddCard);
 }
 
@@ -112,10 +123,9 @@ function handleProfileFormSubmit(evt) {
     closePopup(popupContainerEditProfile);
 }
 
-forms.forEach((form) => {
-    const formValidation = new FormValidator(form);
-    const formEditValidation = formValidation.enableValidation();
-});
+    profileEditValidation.enableValidation();
+    cardAddValidation.enableValidation();
+
 
 //  Закрытие попапа по нажатию на оверлей
 popups.forEach((item) => {
