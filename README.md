@@ -24,3 +24,4 @@
     - ООП,
     - Webpack
 
+https://ravil377.github.io/mesto/
