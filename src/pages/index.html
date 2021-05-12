@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./pages/index.css" />
         <title>Mesto Russia</title>
     </head>
     <body class="root">
@@ -32,9 +31,11 @@
                 <h2 class="popup__container-title">Новое место</h2>
                 <form name="add-card" class="form add-card" novalidate>
                     <input type="text" name="name" placeholder="Название" id="name-input" class="popup__input popup__input_name_card" 
+                    minlength="2" 
+                    maxlength="30"
                     required/>
                     <span class="popup__input-error name-input-error"></span>
-                    <input type="url" name="foto" placeholder="Ссылка на картинку" id="foto-input" class="popup__input popup__input_foto_card" 
+                    <input type="url" name="link" placeholder="Ссылка на картинку" id="foto-input" class="popup__input popup__input_foto_card" 
                     required/>
                     <span class="popup__input-error foto-input-error"></span>
                     <button type="submit" class="popup__container-submit-button popup__container-submit-button_add-button">Сохранить</button>
@@ -53,11 +54,11 @@
 
         <div class="page">
             <header class="header">
-                <img src="./images/logo.svg" alt="Лого" class="header__logo" />
+                <img src="<%=require('../images/logo.svg')%>" alt="Лого" class="header__logo" />
             </header>
             <main class="main">
                 <section class="profile">
-                    <img src="./images/jak-iv-kusto.jpg" alt="Жак-Ив Кусто" class="profile__avatar" />
+                    <img src="<%=require('../images/jak-iv-kusto.jpg')%>" alt="Жак-Ив Кусто" class="profile__avatar" />
                     <div class="profile__info">
                         <h1 class="profile__title profile__title-text">Жак-Ив Кусто</h1>
                         <p class="profile__subtitle">Исследователь океана</p>
@@ -71,7 +72,7 @@
             </main>
 
             <footer class="footer">
-                <p class="footer__text">&copy; 2020 Mesto Russia</p>
+                <p class="footer__text">&copy; 2021 Mesto Russia</p>
             </footer>
         </div>
         <template class="element-template">
@@ -84,6 +85,5 @@
                 </div>
             </li>
         </template>
-        <script type="module" src="./js/index.js"></script>
     </body>
 </html>

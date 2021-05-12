@@ -1,22 +1,22 @@
-import {openImagePopup} from './index.js';
-export class Card {  
+export class Card {
     static selectors = {
-        text: '.element__title',
-        removeButton: '.element__delete-button',
-        likeButton: '.element__like-button',
-        likeButtonActive: 'element__like-button_active',
-        imageButton: '.element__image',
-        card: '.element',
-        popup: '.popup_gallery',
-      }
+        text: ".element__title",
+        removeButton: ".element__delete-button",
+        likeButton: ".element__like-button",
+        likeButtonActive: "element__like-button_active",
+        imageButton: ".element__image",
+        card: ".element",
+        popup: ".popup_gallery",
+    };
 
-    constructor (data, cardSelector) {
+    constructor(data, cardSelector, handleCardClick) {
         this._name = data.name;
         this._alt = data.name;
         this._link = data.link;
         this._cardSelector = cardSelector;
+        this._handleCardClick = handleCardClick;
     }
-    
+
     _handleLikeClick(evt) {
         evt.target.classList.toggle(Card.selectors.likeButtonActive);
     }
@@ -26,10 +26,10 @@ export class Card {
     }
 
     _setEventListeners() {
-        this._element.querySelector(Card.selectors.removeButton).addEventListener("click", this._handleDeleteClick);        
+        this._element.querySelector(Card.selectors.removeButton).addEventListener("click", this._handleDeleteClick);
         this._element.querySelector(Card.selectors.likeButton).addEventListener("click", this._handleLikeClick);
         this._element.querySelector(Card.selectors.imageButton).addEventListener("click", () => {
-            openImagePopup(this._link, this._name);
+            this._handleCardClick(this._name, this._link);
         });
     }
 
