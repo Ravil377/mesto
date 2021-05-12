@@ -2,7 +2,6 @@ export class FormValidator {
     constructor(settings, form) {
         this._settings = settings;
         this._form = form;
-
     }
 
     enableValidation() {
@@ -27,7 +26,7 @@ export class FormValidator {
         if (!inputElement.validity.valid) {
             this._showInputError(inputElement, inputElement.validationMessage);
         } else {
-            this._hideInputError(inputElement);
+            this.hideInputError(inputElement);
         }
     }
 
@@ -38,7 +37,7 @@ export class FormValidator {
         errorElement.classList.add(this._settings.errorClass);
     }
 
-    _hideInputError(inputElement) {
+    hideInputError(inputElement) {
         const errorElement = this._form.querySelector(`.${inputElement.id}-error`);
         inputElement.classList.remove(this._settings.inputErrorClass);
         errorElement.classList.remove(this._settings.errorClass);
@@ -67,5 +66,3 @@ export class FormValidator {
         buttonElement.classList.add(this._settings.inactiveButtonClass);
     }
 }
-
-
