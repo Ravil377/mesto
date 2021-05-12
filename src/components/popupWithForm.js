@@ -1,10 +1,10 @@
-import { Popup } from "./popup.js";
+import { Popup } from "./Popup.js";
 
 export class PopupWithForm extends Popup {
     constructor(popupSelector, formSubmit) {
         super(popupSelector);
         this._formSubmit = formSubmit;
-        this._popupSelector = popupSelector;
+        this._popupSelector = document.querySelector(popupSelector);
         this._form = this._popupSelector.querySelector(".form");
         this._inputList = this._form.querySelectorAll(".popup__input");
         this._buttonSubmit = this._popupSelector.querySelector(".popup__container-submit-button");
@@ -19,14 +19,13 @@ export class PopupWithForm extends Popup {
     }
 
     close() {
-        document.removeEventListener("keydown", super._handleEscClose.bind(this));
-        this._popupSelector.classList.remove("popup_opened");
+        super.close();
+        document.removeEventListener("keydown", super._handleOverlayClose);
         setTimeout(() => this._form.reset(), 400); // очистка формы с задержкой, из-за анимации
     }
 
     setEventListeners() {
-        this._popupButtonClose.addEventListener("click", this.close.bind(this));
-        this._popupSelector.addEventListener("click", this._handleOverlayClose.bind(this));
+        super.setEventListeners();
         this._form.addEventListener("submit", () => {
             this._formSubmit(this._getInputValues());
             this.close();

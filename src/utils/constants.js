@@ -53,14 +53,6 @@ export const profileEdit = popupContainerEditProfile.querySelector(".edit-profil
 
 //      Попап добавления карточки
 export const popupContainerAddCard = document.querySelector(".popup_add-card");
-export const cardAdd = popupContainerAddCard.querySelector(".add-card");
+export const cardAdd = popupContainerAddCard.querySelector(".add-card"); //форма добавления карточки
 
-export const popupButtonAddCard = document.querySelector(".popup__container-submit-button_add-button");
 
-//      Контейнер карточек
-export const elements = document.querySelector(".elements");
-
-//      Popup открытой карточки
-export const popupGallery = document.querySelector(".popup_gallery");
-
-export const inputListAddCard = Array.from(popupContainerAddCard.querySelectorAll(".popup__input"));
