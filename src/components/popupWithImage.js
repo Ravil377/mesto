@@ -1,4 +1,4 @@
-import { Popup } from "./popup.js";
+import { Popup } from "./Popup.js";
 
 export class PopupWithImage extends Popup {
     constructor(popupSelector) {
@@ -8,10 +8,9 @@ export class PopupWithImage extends Popup {
     }
 
     open(name, link) {
+        super.open();
         this._fullImage.src = link;
         this._fullImageCaption.alt = name;
         this._fullImageCaption.textContent = name;
-        this._popupSelector.classList.add("popup_opened");
-        document.addEventListener("keydown", super.close.bind(this));
     }
 }
