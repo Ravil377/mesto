@@ -1,7 +1,7 @@
 Спринт 8: Место
 Для запуска:
 
-    - Клонировать или скачать репозиторий https://github.com/MKvaratshelia/praktikum_mesto
+    - Клонировать или скачать репозиторий https://github.com/Ravil377/mesto
     - Установить пакеты webpack командой npm i
     - Запустить вертуальный сервер командой npm run dev
     - Для финальной сборки введите команду npm run build
