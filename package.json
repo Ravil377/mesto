@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Ravil377/mesto/issues"
   },
-  "homepage": "https://github.com/Ravil377/mesto#readme",
+  "homepage": "https://github.com/Ravil377/src/page",
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
