@@ -53,7 +53,6 @@ cardAddValidation.enableValidation();
 
 //  Открытие попапа изменения профиля
 buttonProfilePopupOpen.addEventListener("click", () => {
-    profileEdit.reset;
     const userProfile = userInfoProfile.getUserInfo();
     popupInputTypeName.value = userProfile.name.textContent;
     popupInputTypeInfo.value = userProfile.about.textContent;
@@ -62,7 +61,6 @@ buttonProfilePopupOpen.addEventListener("click", () => {
 
 //  Открытие попапа добавления карточки
 popupButtonAdd.addEventListener("click", () => {
-    cardAdd.reset; // отключаю кнопку и очищаю форму от ошибок при открытии попапа
     popupOpenAddCard.open();
     
 });

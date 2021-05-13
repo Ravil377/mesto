@@ -14,6 +14,21 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.popup__input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  
+  .popup__input:focus::-moz-placeholder {
+    color: transparent;
+  }
+  
+  .popup__input:focus:-moz-placeholder {
+    color: transparent;
+  }
+  
+  .popup__input:focus:-ms-input-placeholder {
+    color: transparent;
+  }
 
 @media screen and (max-width: 550px) {
     .popup__input {

@@ -4,10 +4,9 @@ export class PopupWithForm extends Popup {
     constructor(popupSelector, formSubmit) {
         super(popupSelector);
         this._formSubmit = formSubmit;
-        this._popupSelector = document.querySelector(popupSelector);
-        this._form = this._popupSelector.querySelector(".form");
+        this._form = this._popup.querySelector(".form");
         this._inputList = this._form.querySelectorAll(".popup__input");
-        this._buttonSubmit = this._popupSelector.querySelector(".popup__container-submit-button");
+        this._buttonSubmit = this._popup.querySelector(".popup__container-submit-button");
     }
 
     _getInputValues() {
@@ -20,7 +19,6 @@ export class PopupWithForm extends Popup {
 
     close() {
         super.close();
-        document.removeEventListener("keydown", super._handleOverlayClose);
         setTimeout(() => this._form.reset(), 400); // очистка формы с задержкой, из-за анимации
     }
 
