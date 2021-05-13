@@ -62,5 +62,4 @@ buttonProfilePopupOpen.addEventListener("click", () => {
 //  Открытие попапа добавления карточки
 popupButtonAdd.addEventListener("click", () => {
     popupOpenAddCard.open();
-    
 });
