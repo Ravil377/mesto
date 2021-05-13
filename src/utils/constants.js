@@ -54,5 +54,3 @@ export const profileEdit = popupContainerEditProfile.querySelector(".edit-profil
 //      Попап добавления карточки
 export const popupContainerAddCard = document.querySelector(".popup_add-card");
 export const cardAdd = popupContainerAddCard.querySelector(".add-card"); //форма добавления карточки
-
-
