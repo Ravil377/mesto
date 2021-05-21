@@ -1,29 +1,7 @@
-export const initialCards = [
-    {
-        name: "Архыз",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-    },
-    {
-        name: "Челябинская область",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-    },
-    {
-        name: "Иваново",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-    },
-    {
-        name: "Камчатка",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-    },
-    {
-        name: "Холмогорский район",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-    },
-    {
-        name: "Байкал",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-    },
-];
+export const apiOptions = {
+    baseUrl: "https://mesto.nomoreparties.co/v1/cohort-24",
+    authorization: "ebb98a36-70e4-466a-8500-5c6ce9301133",
+};
 
 export const validation = {
     formSelector: ".popup__form",
@@ -44,6 +22,7 @@ export const popupButtonAdd = document.querySelector(".profile__add-button");
 const profileInfo = document.querySelector(".profile__info");
 export const profileTitle = profileInfo.querySelector(".profile__title-text");
 export const profileSubtitle = profileInfo.querySelector(".profile__subtitle");
+export const profileAvatar = document.querySelector(".profile__avatar");
 
 //      Popup профиля
 export const popupContainerEditProfile = document.querySelector(".popup_edit-profile");
@@ -54,3 +33,6 @@ export const profileEdit = popupContainerEditProfile.querySelector(".edit-profil
 //      Попап добавления карточки
 export const popupContainerAddCard = document.querySelector(".popup_add-card");
 export const cardAdd = popupContainerAddCard.querySelector(".add-card"); //форма добавления карточки
+
+export const popupAvatarEdit = document.querySelector(".profile__avatar-overlay");
+export const formAvatar = document.querySelector(".edit-avatar");

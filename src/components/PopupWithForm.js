@@ -19,14 +19,17 @@ export class PopupWithForm extends Popup {
 
     close() {
         super.close();
-        setTimeout(() => this._form.reset(), 400); // очистка формы с задержкой, из-за анимации
+        setTimeout(() => {
+            this._form.reset();
+            this._buttonSubmit.textContent = "Сохранить";
+        }, 400); // очистка формы с задержкой, из-за анимации
     }
 
     setEventListeners() {
         super.setEventListeners();
         this._form.addEventListener("submit", () => {
             this._formSubmit(this._getInputValues());
-            this.close();
+            this._buttonSubmit.textContent = "Сохранение...";
         });
     }
 }
