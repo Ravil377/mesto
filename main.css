@@ -17,7 +17,7 @@
 .profile__edit-button{background-color:#000;background-image:url(af236f6cf67005f1d7aa.svg);background-position:50%;background-repeat:no-repeat;border:1px solid #fff;margin-top:-10px;min-height:24px;min-width:25px;transition:opacity .5s}.profile__edit-button:hover{cursor:pointer;opacity:.6}.profile__edit-button:focus{outline:none}@media screen and (max-width:500px){.profile__edit-button{margin-bottom:20px;margin-top:6px;min-height:18px;min-width:18px}}
 .profile__title-text{color:#fff;font-size:2.62rem;font-style:normal;font-weight:500;margin:0;padding-bottom:16px;padding-right:18px}@media screen and (max-width:500px){.profile__title-text{font-size:1.68rem;padding-right:10px}}
 .gallery{margin-top:51px}@media screen and (max-width:320px){.gallery{margin-top:36px}}
-.element{background-color:#fff;border-radius:10px;cursor:pointer;max-width:282px;overflow:hidden;position:relative}.element:hover{opacity:.8}
+.element{background-color:#fff;border-radius:10px;cursor:pointer;display:flex;flex-direction:column;max-width:282px;overflow:hidden;position:relative}.element:hover{opacity:.8}
 .element__like{align-items:center;display:flex;flex-direction:column}
 .element__like-count{font-size:.8rem;font-style:normal;font-weight:400;line-height:1rem;margin:3px 0 0}
 .element__image{height:282px;-o-object-fit:cover;object-fit:cover;width:100%}
