@@ -1,4 +1,6 @@
 .element {
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
     position: relative;
     max-width: 282px;
