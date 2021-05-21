@@ -4,10 +4,9 @@ export class PopupWithForm extends Popup {
     constructor(popupSelector, formSubmit) {
         super(popupSelector);
         this._formSubmit = formSubmit;
-        this._popupSelector = document.querySelector(popupSelector);
-        this._form = this._popupSelector.querySelector(".form");
+        this._form = this._popup.querySelector(".form");
         this._inputList = this._form.querySelectorAll(".popup__input");
-        this._buttonSubmit = this._popupSelector.querySelector(".popup__container-submit-button");
+        this._buttonSubmit = this._popup.querySelector(".popup__container-submit-button");
     }
 
     _getInputValues() {
@@ -20,15 +19,17 @@ export class PopupWithForm extends Popup {
 
     close() {
         super.close();
-        document.removeEventListener("keydown", super._handleOverlayClose);
-        setTimeout(() => this._form.reset(), 400); // очистка формы с задержкой, из-за анимации
+        setTimeout(() => {
+            this._form.reset();
+            this._buttonSubmit.textContent = "Сохранить";
+        }, 400); // очистка формы с задержкой, из-за анимации
     }
 
     setEventListeners() {
         super.setEventListeners();
         this._form.addEventListener("submit", () => {
             this._formSubmit(this._getInputValues());
-            this.close();
+            this._buttonSubmit.textContent = "Сохранение...";
         });
     }
 }
