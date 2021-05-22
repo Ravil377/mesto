@@ -3,17 +3,19 @@ export class Api {
         this._options = options;
     }
 
+    _answerForServer(res) {
+        if (res.ok) {
+            return res.json();
+        }
+        return Promise.reject(`Ошибка: ${res.status}`);
+    }
+
     getProfileInfo() {
         return fetch(`${this._options.baseUrl}/users/me`, {
             headers: {
                 authorization: `${this._options.authorization}`,
             },
-        }).then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        }).then((res) => this._answerForServer(res));
     }
 
     postProfileInfo(name, about) {
@@ -27,12 +29,7 @@ export class Api {
                 name: name,
                 about: about,
             }),
-        }).then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        }).then((res) => this._answerForServer(res));
     }
 
     postProfileAvatar(avatar) {
@@ -45,12 +42,7 @@ export class Api {
             body: JSON.stringify({
                 avatar: avatar,
             }),
-        }).then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        }).then((res) => this._answerForServer(res));
     }
 
     postCard(nameCard, linkCard) {
@@ -64,12 +56,7 @@ export class Api {
                 name: nameCard,
                 link: linkCard,
             }),
-        }).then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        }).then((res) => this._answerForServer(res));
     }
 
     likeAdd(id) {
@@ -79,17 +66,7 @@ export class Api {
                 authorization: `${this._options.authorization}`,
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                owner: {
-                    _id: "997905c6446d826c7cb080d1",
-                },
-            }),
-        }).then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        }).then((res) => this._answerForServer(res));
     }
 
     deleteLike(id) {
@@ -99,17 +76,7 @@ export class Api {
                 authorization: `${this._options.authorization}`,
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                owner: {
-                    _id: "997905c6446d826c7cb080d1",
-                },
-            }),
-        }).then((result) => {
-            if (result.ok) {
-                return result.json();
-            }
-            return Promise.reject(`Ошибка: ${result.status}`);
-        });
+        }).then((res) => this._answerForServer(res));
     }
 
     getInitialCards() {
@@ -117,12 +84,7 @@ export class Api {
             headers: {
                 authorization: `${this._options.authorization}`,
             },
-        }).then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        });
+        }).then((res) => this._answerForServer(res));
     }
 
     deleteCard(id) {
@@ -132,20 +94,7 @@ export class Api {
                 authorization: `${this._options.authorization}`,
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                owner: {
-                    _id: "997905c6446d826c7cb080d1",
-                },
-            }),
         })
-            .then((result) => {
-                if (result.ok) {
-                    return result.json();
-                }
-                return Promise.reject(`Ошибка: ${result.status}`);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        .then((res) => this._answerForServer(res));
     }
 }

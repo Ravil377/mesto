@@ -3,9 +3,10 @@ import { Card } from "../components/Сard.js";
 import { popupOpenImage } from "../pages/index.js";
 import { popupOpenCardRemove } from "../pages/index.js";
 
-export function createCard(dataElement) {
+export function createCard(dataElement, userId) {
     const cardElement = new Card(
         dataElement,
+        userId,
         ".element-template",
         (name, link) => {
             popupOpenImage.open(name, link);
@@ -14,7 +15,7 @@ export function createCard(dataElement) {
             popupOpenCardRemove.open(id, handleDeleteCard);
         },
         (isLike, id) => {
-            if (isLike) {
+            if (!isLike) {
                 api.likeAdd(id).then((res) => cardElement.addAndRemoveLike(res.likes.length))
                 .catch((err) => console.log(err));
             } else {

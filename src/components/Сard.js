@@ -10,12 +10,12 @@ export class Card {
         likeCount: ".element__like-count",
     };
 
-    constructor(data, cardSelector, handleCardClick, handleCardDelete, handleLikeCount) {
+    constructor(data, userId, cardSelector, handleCardClick, handleCardDelete, handleLikeCount) {
         this._name = data.name;
         this._alt = data.name;
         this._link = data.link;
-        this._userId = data.owner._id;
-        this._id = data._id;
+        this._userId = data.owner._id; // id создателя карточки
+        this._id = data._id; // id карточки
         this._likes = data.likes;
         this._cardSelector = cardSelector;
         this._handleCardClick = handleCardClick;
@@ -27,18 +27,20 @@ export class Card {
         this._imageButton = this._element.querySelector(Card.selectors.imageButton);
         this._cardText = this._element.querySelector(Card.selectors.text);
         this._likeCount = this._element.querySelector(Card.selectors.likeCount);
+        this._user = userId; // id пользователь
     }
 
     _handleLikeClick() {
-        return this._likeButton.classList.toggle(Card.selectors.likeButtonActive);
+        return this._likeButton.classList.contains(Card.selectors.likeButtonActive);
     }
 
     addAndRemoveLike(count) {
+        this._likeButton.classList.toggle(Card.selectors.likeButtonActive);
         this._likeCount.textContent = count;
     }
 
     _setEventListeners() {
-        if (this._userId === "997905c6446d826c7cb080d1") {
+        if (this._userId === this._user) {
             this._removeButton.addEventListener("click", () => {
                 this._handleCardDelete(this._id, this._removeButton.closest(Card.selectors.card));
             });
@@ -55,9 +57,6 @@ export class Card {
     _getTemplate(where) {
         const galleryElement = document.querySelector(where).content.cloneNode(true);
         this._cardElement = galleryElement;
-        if (this._userId != "997905c6446d826c7cb080d1") {
-            this._cardElement.querySelector(Card.selectors.removeButton).remove();
-        }
         return this._cardElement;
     }
 
@@ -67,10 +66,13 @@ export class Card {
         this._cardText.textContent = this._name;
         this._likeCount.textContent = this._likes.length;
         this._likes.forEach((item) => {
-            if (item._id === "997905c6446d826c7cb080d1") {
+            if (item._id === this._user) {
                 this._likeButton.classList.add(Card.selectors.likeButtonActive);
             }
         });
+        if (this._userId != this._user) {
+            this._removeButton.remove();
+        }
         this._setEventListeners();
         return this._element;
     }

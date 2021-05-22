@@ -20,8 +20,8 @@ export const popupButtonAdd = document.querySelector(".profile__add-button");
 
 //      Данные в профиле
 const profileInfo = document.querySelector(".profile__info");
-export const profileTitle = profileInfo.querySelector(".profile__title-text");
-export const profileSubtitle = profileInfo.querySelector(".profile__subtitle");
+// export const profileTitle = profileInfo.querySelector(".profile__title-text");
+// export const profileSubtitle = profileInfo.querySelector(".profile__subtitle");
 export const profileAvatar = document.querySelector(".profile__avatar");
 
 //      Popup профиля
