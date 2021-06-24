@@ -1,6 +1,8 @@
 ### [Данный проект](https://ravil377.github.io/mesto/) выполнен в рамках учебного процесса совместно с Яндекс.Практикум с использованием только возможностей HTML и CSS.
 
-<img src="https://github.com/Ravil377/how-to-learn/blob/main/assets/how-to-learn.gif" width="250" height="350">
+<img src="https://github.com/Ravil377/mesto/blob/main/assets/3.gif" width="250" height="350">
+<img src="https://github.com/Ravil377/mesto/blob/main/assets/4.gif" width="250" height="350">
+<img src="https://github.com/Ravil377/mesto/blob/main/assets/5.gif" width="250" height="350">
 
 ### Как работать с сайтом:
 - При нажатии кнопки редактирование (возле Жак-Ив), открывается окно с полями, данные которые берутся с основной страницы. 
