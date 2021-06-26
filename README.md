@@ -1,4 +1,4 @@
-### [Данный проект](https://ravil377.github.io/mesto/) выполнен в рамках учебного процесса совместно с Яндекс.Практикум с использованием только возможностей HTML и CSS.
+### [Данный проект](https://ravil377.github.io/mesto/) выполнен в рамках учебного процесса совместно с Яндекс.Практикум с использованием только возможностей HTML, CSS и Javascript.
 
 <img src="https://github.com/Ravil377/mesto/blob/main/assets/3.gif" width="250" height="350"> <img src="https://github.com/Ravil377/mesto/blob/main/assets/4.gif" width="250" height="350"> <img src="https://github.com/Ravil377/mesto/blob/main/assets/5.gif" width="250" height="350">
 
